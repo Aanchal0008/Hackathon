@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare App - Signup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+      background-image: url("https://slidescorner.com/wp-content/uploads/2022/11/01-Geometric-Hexagons-Shape-Medicine-Science-Free-PPT-Background-by-SlidesCorner.jpg?v=1702385202");
+    }
+    .container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: aliceblue;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+     
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      width: 180px;
+      padding: 10px;
+      background-color: lightskyblue;
+      color: black;
+      border: none;
+      cursor: pointer;
+      margin: 10px 100px;
+      border-radius: 15px;
+    }
+    button:hover {
+      background-color: rgb(253, 43, 43);
+    }
+    h2 {
+      text-align: center;
+      color: rgb(33, 32, 32);
+    }
+    .container.p{
+      text-align: center;
+      margin: 10px 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="font-family: Libre_Baskerville;">Signup</h2>
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="signup()">Signup</button>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+
+  <script>
+    function signup() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      if (name && email && password) {
+        localStorage.setItem('user', JSON.stringify({ name, email, password }));
+        alert('Signup successful!');
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('Please fill all fields.');
+      }
+    }
+  </script>
+</body>
+</html>

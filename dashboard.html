@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare App - Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 10px 20px;
+      position: absolute;
+      text-align: center;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      justify-content: space-around;
+      
+    }
+    .section {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: lightcyan;
+      width: 445px;
+      height: 500px;
+      background: none;
+    }
+    .section button {
+      padding: 10px;
+      background-color:lightblue;
+      color: rgb(18, 17, 17);
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+    }
+    footer {
+      position: fixed;
+      background-color: lightblue;
+      text-align: center;
+      width: 100%;
+      text-align: center;
+      bottom:0;
+      padding: 5px;
+    }
+    img{
+      border:2px solid black;
+      border-radius: 12px;
+    }
+    .footer button{
+      width:auto;
+      font-size: 12px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      border-radius: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Healthcare Dashboard</h2>
+  </header>
+  <div class="container">
+    <div class="section"><img src="https://dev-aakruta.pantheonsite.io/wp-content/uploads/2024/10/pexels-photo-6823602.jpeg" height="300px" width="350px"><br>
+      <h3>Book an Appointment</h3>
+      <p>Choose type: 
+        <select id="appointmentType">
+          <option value="physical">Physical</option>
+          <option value="virtual">Virtual</option>
+        </select>
+      </p>
+      <button onclick="bookAppointment()">Book Appointment</button>
+    </div>
+    <div class="section"><img src="https://thumbs.dreamstime.com/b/cartoon-hand-medical-clipboard-report-pencil-d-245783473.jpg" height="300px" width="350px">
+      <h3>Digital Report</h3>
+      <p>View your health reports.</p>
+      <button onclick="viewReport()">View Report</button>
+    </div>
+    <div class="section"><img src="https://dev-aakruta.pantheonsite.io/wp-content/uploads/2024/10/pexels-photo-3683041.jpeg" height="300px" width="350px">
+      <h3>Medications</h3>
+      <p>Check your prescribed medications.</p>
+      <button onclick="viewMedications()">View Medications</button>
+    </div>
+  </div>
+  <footer>
+    <p style="font-size: 20px;">Need help?</p>
+    <a href="help.html">
+      <button><b>Help</b></button>
+    </a>
+  </footer>  
+  <script>
+      function bookAppointment() {
+      const appointmentType = document.getElementById('appointmentType').value;
+      alert(`Appointment booked successfully for a ${appointmentType} consultation!`);
+    }
+
+    function viewReport() {
+      alert('Your digital report is being fetched.');
+    }
+
+    function viewMedications() {
+      alert('Your medication list is being fetched.');
+    }
+  </script>
+</body>
+</html>

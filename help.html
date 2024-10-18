@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare App - Help</title>
+    <style>
+        .container {
+            text-align: center;
+            margin: 0;
+            background-image: url("https://dev-aakruta.pantheonsite.io/wp-content/uploads/2024/10/pexels-photo-4108205.jpeg");
+            opacity: 70%;
+        }
+        h3 {
+            text-align: center;
+            font-size: 40px;
+        }
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 style="font-family: Libre_Baskerville;">AI Chatbot</h3>
+        <p>Ask anything about your health.</p><br>
+        <input type="text" id="chatInput" placeholder="Type your question"><br>
+        <button onclick="askChatbot()">Ask</button>
+        <p id="chatResponse"></p>
+    </div>
+    <script>
+        function askChatbot() {
+            const question = document.getElementById('chatInput').value;
+            const response = "This is a dummy response from the AI chatbot.";
+            document.getElementById('chatResponse').innerText = response;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare App - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: lightskyblue;
+      opacity: 80%;
+    }
+    .container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px 
+      
+      
+      rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      width: 180px;
+      padding: 10px;
+      background-color: skyblue;
+      color: black;
+      border: none;
+      cursor: pointer;
+      margin: 10px 100px;
+      border-radius: 15px;
+    }
+    h2 {
+      text-align: center;
+      color: rgb(33, 32, 32);
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <a href="signup.html">Signup here</a></p>
+  </div>
+
+  <script>
+    function login() {
+      const loginEmail = document.getElementById('loginEmail').value;
+      const loginPassword = document.getElementById('loginPassword').value;
+
+      const storedUser = JSON.parse(localStorage.getItem('user'));
+
+      if (storedUser && storedUser.email === loginEmail && storedUser.password === loginPassword) {
+        alert('Login successful!');
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('Invalid email or password.');
+      }
+    }
+  </script>
+</body>
+</html>
